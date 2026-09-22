@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Poppins:wght@400;700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>HI'KALY Restaurant</title>
+    <link rel="stylesheet" href="hi'kaly.css">
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <a href="#" class="logo">Hi'Kaly</a>
+      <div class="nav-links">
+        <ul>
+          <li><a href="#home">Acceuil</a></li>
+          <li><a href="#reservation">Réserver</a></li>
+          <li><a href="#card">Carte</a></li>
+          <li><a href="#about">Pourquoi Hi'Kaly?</a></li>
+          <li><a href="#contact">Nous contacter</a></li>
+        </ul>
+      </div>
+      <div class="menu">
+        <i class="fa-solid fa-bars fa-2x menu-hamburger "></i>
+      </div>
+    </nav>
+    <section class="main">
+      <h1 class="heading_1">Tongasoa – Bienvenue dans l'Univers de Hi'Kaly</h1>
+      <p class="heading">"Ici, le temps s'arrête pour laisser place à l'émotion. Plus qu'un repas, nous vous offrons une immersion dans l'élégance de la Grande Île. <strong>Hi'Kaly</strong> <br>est une invitation à redécouvrir les trésors de Madagascar à travers le prisme de la haute gastronomie."<br></p>
+      <div class="main-btn">
+        <a href="#card" class="welcome">Découvrir plus</a>
+      </div>
+    </section>
+  </header>
+
+  <!--RESERVER-->
+  <section id="reservation" class="reserver-section">
+    <div class="glass-reservation">
+      <h1 class="reserver-title">Réserver</h1>
+      <p class="reserver-subtitle">Réserver votre table d'exception</p>
+      <div class="reserver-divider"></div>
+
+      <form class="reservation-form" id="reservationForm" novalidate>
+
+        <!-- LIGNE 1 : Nom + Téléphone -->
+        <div class="form-row">
+          <div class="form-group">
+            <label for="nom">Nom complet</label>
+            <input type="text" id="nom" name="nom" placeholder="Votre nom" required>
+            <span class="field-error" id="error-nom"></span>
+          </div>
+          <div class="form-group">
+            <label for="tel">Téléphone</label>
+            <input type="tel" id="tel" name="tel" placeholder="+261 34 00 000 00" required>
+            <span class="field-error" id="error-tel"></span>
+          </div>
+        </div>
+
+        <!-- LIGNE 2 : Date + Convives -->
+        <div class="form-row">
+          <div class="form-group">
+            <label for="date">Date</label>
+            <input type="date" id="date" name="date" required>
+            <span class="field-error" id="error-date"></span>
+          </div>
+          <div class="form-group">
+            <label for="guests">Convives</label>
+            <select id="guests" name="guests">
+              <option value="1" style="color:black;">1 Personne</option>
+              <option value="2" selected style="color:black;">2 Personnes</option>
+              <option value="4" style="color:black;">4 Personnes</option>
+              <option value="6" style="color:black;">Table de groupe (6+)</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- LIGNE 3 : Service + Heure -->
+        <div class="form-row">
+          <div class="form-group">
+            <label>Service</label>
+            <div class="service-options">
+              <label class="radio-container">
+                <input type="radio" name="service" value="lunch" checked>
+                <span class="checkmark">Sakafo atoandro (Déjeuner)</span>
+              </label>
+              <label class="radio-container">
+                <input type="radio" name="service" value="dinner">
+                <span class="checkmark">Sakafo hariva (Dîner)</span>
+              </label>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="time">Heure souhaitée</label>
+            <input type="time" id="time" name="time" required>
+            <span class="field-error" id="error-time"></span>
+          </div>
+        </div>
+
+        <!-- LIGNE 4 : Occasion spéciale -->
+        <div class="form-row">
+          <div class="form-group" style="flex: 1;">
+            <label for="occasion">Occasion spéciale</label>
+            <select id="occasion" name="occasion" style="color: #F2E8CF;">
+              <option value="" style="color:black;">Aucune occasion particulière</option>
+              <option value="anniversaire" style="color:black;">🎂 Anniversaire</option>
+              <option value="romantique" style="color:black;">🌹 Dîner romantique</option>
+              <option value="affaires" style="color:black;">💼 Repas d'affaires</option>
+              <option value="famille" style="color:black;">👨‍👩‍👧 Réunion de famille</option>
+              <option value="autre" style="color:black;">✨ Autre célébration</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="main-btn">
+          <button type="submit" class="btn-decouvrir">Confirmer la réservation</button>
+        </div>
+      </form>
+
+      <!-- MESSAGE DE CONFIRMATION -->
+      <div class="reservation-confirmation" id="reservationConfirmation">
+        <div class="confirmation-icon">✦</div>
+        <h2 class="confirmation-title">Réservation confirmée</h2>
+        <p class="confirmation-text" id="confirmationText"></p>
+        <p class="confirmation-sub">Nous vous contacterons dans les plus brefs délais pour finaliser votre table.</p>
+        <button class="btn-decouvrir" id="btnNouvelle" style="margin-top: 30px;">Nouvelle réservation</button>
+      </div>
+
+    </div>
+  </section>
+
+  <!--CARTE-->
+  <section id="card" class="carte-wrapper">
+    <div class="carte-header">
+      <p class="carte-eyebrow">Haute gastronomie malgache</p>
+      <h1 class="carte-title">La Carte</h1>
+      <p class="carte-subtitle">Une cuisine d'exception, ancrée dans l'âme de la Grande Île</p>
+      <div class="carte-divider">
+        <span class="divider-line"></span>
+        <span class="divider-diamond"></span>
+        <span class="divider-line"></span>
+      </div>
+    </div>
+
+    <div class="carte-content">
+
+      <!-- ENTRÉES -->
+      <div class="category-block">
+        <p class="category-label">Prémices</p>
+        <div class="plats-grid">
+          <div class="plat-item">
+            <div class="plat-info">
+              <p class="plat-name">Velours de Vary Amin'anana</p>
+              <p class="plat-desc">Émulsion de riz parfumé, feuilles tendres du jardin, huile de combava infusée à froid</p>
+            </div>
+            <p class="plat-price"><sup>Ar </sup>28 000</p>
+          </div>
+          <div class="plat-item">
+            <div class="plat-info">
+              <p class="plat-name">Tartare de Zébu de Betafo</p>
+              <p class="plat-desc">Viande maturée, condiment de gingembre sauvage, gelée de tamarin & tuile de manioc soufflé</p>
+            </div>
+            <p class="plat-price"><sup>Ar </sup>42 000</p>
+          </div>
+          <div class="plat-item">
+            <div class="plat-info">
+              <p class="plat-name">Bonbon de Romazava en fine gelée</p>
+              <p class="plat-desc">Consommé clarifié de brèdes & bœuf, en sphère nacrée — l'essence de la tradition en une bouchée</p>
+            </div>
+            <p class="plat-price"><sup>Ar </sup>35 000</p>
+          </div>
+          <div class="plat-item">
+            <div class="plat-info">
+              <p class="plat-name">Huître perlée du Canal du Mozambique</p>
+              <p class="plat-desc">Mignonette de vanille Bourbon, écume de coco & vinaigrette d'ylang-ylang</p>
+            </div>
+            <p class="plat-price"><sup>Ar </sup>52 000</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- PLATS PRINCIPAUX -->
+      <div class="category-block">
+        <p class="category-label">Plats de résistance</p>
+        <div class="plats-grid">
+          <div class="plat-item">
+            <div class="plat-info">
+              <p class="plat-name">Côte de Zébu basse température</p>
+              <p class="plat-desc">72h de cuisson lente, jus lacté au poivre Voatsiperifery, purée de patate douce rôtie au beurre noisette</p>
+            </div>
+            <p class="plat-price"><sup>Ar </sup>85 000</p>
+          </div>
+          <div class="plat-item">
+            <div class="plat-info">
+              <p class="plat-name">Ravitoto Haute Couture</p>
+              <p class="plat-desc">Feuilles de manioc confites, effiloché de cochon au lait de coco vieilli, condiment de piment doux & citron caviar</p>
+            </div>
+            <p class="plat-price"><sup>Ar </sup>78 000</p>
+          </div>
+          <div class="plat-item">
+            <div class="plat-info">
+              <p class="plat-name">Lamproie du Lac Alaotra en croûte dorée</p>
+              <p class="plat-desc">Croûte de riz soufflé au safran malgache, beurre blanc aux herbes du Highlands & caviar d'aubergine fumé</p>
+            </div>
+            <p class="plat-price"><sup>Ar </sup>92 000</p>
+          </div>
+          <div class="plat-item">
+            <div class="plat-info">
+              <p class="plat-name">Pigeonneau rôti & Laoka d'exception</p>
+              <p class="plat-desc">Jus corsé aux épices tanety, garniture de légumes du marché d'Analakely, cromesquis de Ro sy Henakisoa</p>
+            </div>
+            <p class="plat-price"><sup>Ar </sup>98 000</p>
+          </div>
+          <div class="plat-item">
+            <div class="plat-info">
+              <p class="plat-name">Morue dorée & Lasopy Grande Île</p>
+              <p class="plat-desc">Brandade légère en velouté de légumes-racines, huile vierge au gingembre confit & chips de taro noir</p>
+            </div>
+            <p class="plat-price"><sup>Ar </sup>74 000</p>
+          </div>
+          <div class="plat-item">
+            <div class="plat-info">
+              <p class="plat-name">Le Vary Sakafo de Saison</p>
+              <p class="plat-desc">Riz de terroir cuit à la vapeur de citronnelle, émincé de légumes de cueillette & fond de Ro brun aux aromates</p>
+            </div>
+            <p class="plat-price"><sup>Ar </sup>58 000</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- DESSERTS -->
+      <div class="category-block">
+        <p class="category-label">Dénouements sucrés</p>
+        <div class="plats-grid">
+          <div class="plat-item">
+            <div class="plat-info">
+              <p class="plat-name">Sphère Chocolat & Café Ambanja</p>
+              <p class="plat-desc">Ganache intense au cacao de la côte Ouest, cœur coulant de café sauvage, sablé au sésame noir torréfié</p>
+            </div>
+            <p class="plat-price"><sup>Ar </sup>38 000</p>
+          </div>
+          <div class="plat-item">
+            <div class="plat-info">
+              <p class="plat-name">Soufflé chaud à la Vanille Bourbon</p>
+              <p class="plat-desc">Soufflé minute, glace onctueuse au lait de zébu & caramel de canne à sucre des hauts plateaux</p>
+            </div>
+            <p class="plat-price"><sup>Ar </sup>45 000</p>
+          </div>
+          <div class="plat-item">
+            <div class="plat-info">
+              <p class="plat-name">Litchis de Tamatave en transparence</p>
+              <p class="plat-desc">Gelée cristalline au gingembre & à la rose, granité de coco & poudre de combava séché au soleil</p>
+            </div>
+            <p class="plat-price"><sup>Ar </sup>32 000</p>
+          </div>
+          <div class="plat-item">
+            <div class="plat-info">
+              <p class="plat-name">Mignardises Hi'Kaly</p>
+              <p class="plat-desc">Une sélection de sept petits plaisirs : bonbons de tamarin, truffes Bourbon, sucres filés au baobab</p>
+            </div>
+            <p class="plat-price"><sup>Ar </sup>28 000</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="carte-note">
+        <p>Nos plats évoluent au rythme des saisons et des arrivages. Le Chef se réserve le droit de faire évoluer la carte.</p>
+        <p>Tous les prix sont exprimés en Ariary malgache, service inclus.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!--POURQUOI HI'KALY-->
+  <section id="about" class="about-section">
+
+    <div class="about-hero">
+      <p class="about-eyebrow">Notre histoire</p>
+      <h1 class="about-hero-title">Pourquoi<br><em>Hi'Kaly ?</em></h1>
+      <p class="about-hero-subtitle">L'histoire d'un nom, d'une obsession et d'une promesse faite à Madagascar.</p>
+      <div class="scroll-hint">
+        <div class="scroll-line"></div>
+      </div>
+    </div>
+
+    <div class="about-name-block">
+      <div class="name-number">01</div>
+      <div class="name-content reveal">
+        <p class="name-tag">Le nom</p>
+        <h2 class="name-title">Hi'Kaly —<br>deux syllabes,<br><em>un monde entier.</em></h2>
+        <p class="name-text">
+          <strong>« Hi »</strong> — ce souffle bref, cette interjection que l'on pousse en malgache quand quelque chose nous surprend, nous émerveille, nous coupe le souffle. C'est ce « oh ! » instinctif devant quelque chose d'inattendu.<br><br>
+          <strong>« Kaly »</strong> — du mot <em>sakafo</em>, la valeur, le prix juste, ce qui mérite d'être célébré. Ce qui vaut la peine.<br><br>
+          Hi'Kaly, c'est donc <strong>« la valeur qui émerveille »</strong>. C'est la promesse que chaque plat posé devant vous arrachera ce petit son involontaire — ce « hi ! » que l'on ne peut pas retenir.
+        </p>
+      </div>
+    </div>
+
+    <div class="about-quote">
+      <div class="quote-inner reveal">
+        <p class="quote-text">
+          "J'ai grandi avec le goût du <em>romazava</em> de ma grand-mère. Un plat simple, humble, fait de peu. Et pourtant — ce bouillon, cette odeur qui envahissait toute la maison — c'était <em>le luxe absolu</em>. J'ai voulu que le monde entier le sache."
+        </p>
+        <p class="quote-author">— Gaël — Le Fondateur, Hi'Kaly</p>
+      </div>
+    </div>
+
+    <div class="about-mission">
+      <div class="mission-left reveal">
+        <h2 class="mission-big-text">Une cuisine<br>qui n'avait<br><em>pas encore<br>de scène.</em></h2>
+        <div class="mission-divider"></div>
+        <p class="mission-intro">
+          La gastronomie malgache est l'une des plus riches, des plus complexes et des plus mal connues du monde. Hi'Kaly est né d'une colère douce — celle de voir des trésors ignorés — et d'une conviction absolue.
+        </p>
+      </div>
+      <div class="mission-right">
+        <div class="mission-item reveal">
+          <p class="mission-item-num">01 — L'idée fondatrice</p>
+          <h3 class="mission-item-title">Remettre Madagascar à table</h3>
+          <p class="mission-item-text">La cuisine malgache n'a jamais eu sa table étoilée. Ses saveurs voyagent — Inde, Afrique, Asie, France — et pourtant elle reste dans l'ombre. Hi'Kaly est une réponse à cette injustice. Pas un musée. Une renaissance.</p>
+        </div>
+        <div class="mission-item reveal">
+          <p class="mission-item-num">02 — La philosophie</p>
+          <h3 class="mission-item-title">Respecter sans muséifier</h3>
+          <p class="mission-item-text">Nous ne voulons pas figer la tradition dans du formol. Nous voulons la faire respirer, lui donner de l'air, de la lumière. Chaque plat commence par une recette de mémé — et s'achève par une question : <em>et si on allait plus loin ?</em></p>
+        </div>
+        <div class="mission-item reveal">
+          <p class="mission-item-num">03 — L'ambition</p>
+          <h3 class="mission-item-title">Faire voyager sans quitter l'île</h3>
+          <p class="mission-item-text">Nos techniques sont mondiales. Nos ingrédients sont malgaches. Le poivre Voatsiperifery des forêts de l'Est, la vanille Bourbon de Sava, le café sauvage des hauts plateaux — nous ne cherchons pas ailleurs ce que nous avons ici.</p>
+        </div>
+        <div class="mission-item reveal">
+          <p class="mission-item-num">04 — La promesse</p>
+          <h3 class="mission-item-title">Chaque soir, une première fois</h3>
+          <p class="mission-item-text">Vous connaissez le ravitoto. Vous pensez savoir ce que c'est. Nous vous promettons que ce soir, ici, il vous surprendra. Ce n'est pas de la trahison — c'est le plus beau des hommages.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="about-final">
+      <p class="final-label">La suite vous appartient</p>
+      <h2 class="final-title">Venez écrire<br>votre chapitre.</h2>
+      <p class="final-text">Hi'Kaly n'est pas un restaurant. C'est une conversation entre hier et demain, entre une île et le monde, entre vous et nous.</p>
+      <a href="#reservation" class="final-btn">Réserver une table</a>
+    </div>
+
+  </section>
+
+  <!--CONTACT-->
+  <section id="contact" class="contact-section">
+
+    <div class="contact-hero">
+      <p class="contact-eyebrow">Écrivez-nous</p>
+      <h2 class="contact-title">Nous contacter</h2>
+      <p class="contact-subtitle">Une table, une question, une envie — nous sommes là. Chaque message mérite une réponse digne de Hi'Kaly.</p>
+    </div>
+
+    <div class="contact-grid">
+
+      <div class="contact-info reveal-contact">
+        <div class="info-block">
+          <p class="info-label">Adresse</p>
+          <p class="info-value">
+            Hi'Kaly Restaurant<br>
+            Majunga, Madagascar<br>
+            <span style="color:rgba(242,232,207,0.35); font-size:0.95rem;">Mahajanga, Grande Île</span>
+          </p>
+        </div>
+        <div class="info-divider"></div>
+        <div class="info-block">
+          <p class="info-label">Heures d'ouverture</p>
+          <p class="info-value">
+            Mardi — Dimanche<br>
+            Déjeuner : 11h30 – 14h30<br>
+            Dîner : 18h30 – 22h
+          </p>
+        </div>
+        <div class="info-divider"></div>
+        <div class="info-block">
+          <p class="info-label">Réservations & contact</p>
+          <p class="info-value">
+            <a href="tel:+261340000000">+261 32 66 944 96</a><br>
+            <a href="/cdn-cgi/l/email-protection#0665696872676572466e6f6d676a7f286b61"><span class="__cf_email__" data-cfemail="5f3c30312b3e3c2b1f3736343e3326713238">Hikaly@gmail.com</span></a>
+          </p>
+        </div>
+      </div>
+
+      <div class="contact-right">
+        <div class="contact-map reveal-contact">
+          <div class="map-grid"></div>
+          <div class="map-pin-wrapper">
+            <div class="map-pin"></div>
+            <p class="map-label">Majunga · Madagascar</p>
+          </div>
+          <span class="map-city">Mahajanga</span>
+        </div>
+
+        <div class="contact-socials reveal-contact">
+          <p class="socials-label">Suivez-nous</p>
+          <div class="socials-row">
+            <a href="#" class="social-link">
+              <svg class="social-icon" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+              Instagram
+            </a>
+            <a href="#" class="social-link">
+              <svg class="social-icon" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+              Facebook
+            </a>
+            <a href="#" class="social-link">
+              <svg class="social-icon" viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.27 6.27 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.18 8.18 0 004.79 1.53V6.77a4.85 4.85 0 01-1.02-.08z"/></svg>
+              TikTok
+            </a>
+            <a href="#" class="social-link">
+              <svg class="social-icon" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+              X (Twitter)
+            </a>
+            <a href="#" class="social-link">
+              <svg class="social-icon" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+              LinkedIn
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="contact-footer">
+      <span class="footer-logo">Hi'Kaly</span>
+      <span class="footer-tagline">La valeur qui émerveille — Majunga, Madagascar</span>
+      <span class="footer-copy" style="color: white;">© 2025 Hi'Kaly · Tous droits réservés</span>
+    </div>
+
+  </section>
+
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="hi'kaly.js"></script>
+  <script>
+    const menuHamburger = document.querySelector(".menu-hamburger ")
+    const navLinks = document.querySelector(".nav-links")
+
+    menuHamburger.addEventListener('click', () => {
+      navLinks.classList.toggle('mobile-menu')
+    })
+
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('mobile-menu')
+      })
+    })
+
+    /* ---- DATE MINIMUM = aujourd'hui ---- */
+    const dateInput = document.getElementById('date');
+    if (dateInput) {
+      const today = new Date().toISOString().split('T')[0];
+      dateInput.setAttribute('min', today);
+    }
+
+    /* ---- VALIDATION + CONFIRMATION ---- */
+    const form = document.getElementById('reservationForm');
+    const confirmation = document.getElementById('reservationConfirmation');
+    const btnNouvelle = document.getElementById('btnNouvelle');
+
+    function showError(id, msg) {
+      const el = document.getElementById('error-' + id);
+      if (el) { el.textContent = msg; el.style.display = msg ? 'block' : 'none'; }
+    }
+
+    function clearErrors() {
+      document.querySelectorAll('.field-error').forEach(e => { e.textContent = ''; e.style.display = 'none'; });
+      document.querySelectorAll('.input-error').forEach(e => e.classList.remove('input-error'));
+    }
+
+    function validateForm() {
+      let valid = true;
+      clearErrors();
+      const nom = document.getElementById('nom').value.trim();
+      const tel = document.getElementById('tel').value.trim();
+      const date = document.getElementById('date').value;
+      const time = document.getElementById('time').value;
+      const today = new Date().toISOString().split('T')[0];
+
+      if (!nom) {
+        showError('nom', 'Veuillez entrer votre nom.');
+        document.getElementById('nom').classList.add('input-error');
+        valid = false;
+      }
+      if (!tel || !/^[+\d\s]{8,}$/.test(tel)) {
+        showError('tel', 'Numéro de téléphone invalide.');
+        document.getElementById('tel').classList.add('input-error');
+        valid = false;
+      }
+      if (!date) {
+        showError('date', 'Veuillez choisir une date.');
+        document.getElementById('date').classList.add('input-error');
+        valid = false;
+      } else if (date < today) {
+        showError('date', 'La date ne peut pas être dans le passé.');
+        document.getElementById('date').classList.add('input-error');
+        valid = false;
+      }
+      if (!time) {
+        showError('time', 'Veuillez choisir une heure.');
+        document.getElementById('time').classList.add('input-error');
+        valid = false;
+      }
+      return valid;
+    }
+
+    if (form) {
+      form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        if (!validateForm()) return;
+
+        const nom = document.getElementById('nom').value.trim();
+        const date = document.getElementById('date').value;
+        const guests = document.getElementById('guests').value;
+        const service = document.querySelector('input[name="service"]:checked').value;
+        const time = document.getElementById('time').value;
+        const occasionEl = document.getElementById('occasion');
+        const occasionText = occasionEl.value ? occasionEl.options[occasionEl.selectedIndex].text : '';
+
+        const serviceLabel = service === 'lunch' ? 'Déjeuner' : 'Dîner';
+        const guestsLabel = guests === '6' ? '6+ personnes' : guests + (guests === '1' ? ' personne' : ' personnes');
+        const occasionLabel = occasionText ? ' · ' + occasionText : '';
+        const dateFormatted = new Date(date + 'T00:00:00').toLocaleDateString('fr-FR', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' });
+
+        document.getElementById('confirmationText').innerHTML =
+          '<strong>' + nom + '</strong>, votre table pour <strong>' + guestsLabel + '</strong><br>' +
+          'le <strong>' + dateFormatted + '</strong> à <strong>' + time.replace(':', 'h') + '</strong><br>' +
+          serviceLabel + occasionLabel;
+
+        form.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
+        form.style.opacity = '0';
+        form.style.transform = 'translateY(20px)';
+        setTimeout(function() {
+          form.style.display = 'none';
+          confirmation.style.display = 'flex';
+          setTimeout(function() { confirmation.classList.add('show'); }, 10);
+        }, 400);
+      });
+    }
+
+    if (btnNouvelle) {
+      btnNouvelle.addEventListener('click', function() {
+        confirmation.classList.remove('show');
+        setTimeout(function() {
+          confirmation.style.display = 'none';
+          form.reset();
+          clearErrors();
+          form.style.opacity = '1';
+          form.style.transform = 'translateY(0)';
+          form.style.display = 'block';
+        }, 400);
+      });
+    }
+
+    /* ---- REVEAL AU SCROLL ---- */
+    const reveals = document.querySelectorAll('.reveal, .reveal-contact');
+    const observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry, i) {
+        if (entry.isIntersecting) {
+          setTimeout(function() { entry.target.classList.add('visible'); }, i * 150);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    reveals.forEach(function(el) { observer.observe(el); });
+
+  </script>
+</body>
+</html>
